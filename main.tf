@@ -85,7 +85,7 @@ resource "aws_security_group" "five" {
 }
 
 resource "aws_s3_bucket" "six" {
-  bucket = "furkhanterra7gsywgys"
+  bucket = "furkhanterra7gsywgysss"
 }
 
 resource "aws_iam_user" "seven" {
@@ -103,6 +103,6 @@ resource "aws_ebs_volume" "eight" {
  availability_zone = "ap-south-1a"
   size = 40
   tags = {
-    Name = "ebs-001"
+    Name = "ebs-by-furkhan"
   }
 }
