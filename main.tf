@@ -1,7 +1,5 @@
 provider "aws" {
 region = "ap-south-1"
-access_key = "AKIA4MPW5CKN4YWHPFOC"
-secret_key = "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"
 }
 
 resource "aws_instance" "one" {
@@ -12,7 +10,6 @@ resource "aws_instance" "one" {
   availability_zone = "ap-south-1b"
   user_data       = <<EOF
 #!/bin/bash
-sudo -i
 yum install httpd -y
 systemctl start httpd
 chkconfig httpd on
@@ -31,7 +28,6 @@ resource "aws_instance" "two" {
   availability_zone = "ap-south-1a"
   user_data       = <<EOF
 #!/bin/bash
-sudo -i
 yum install httpd -y
 systemctl start httpd
 chkconfig httpd on
@@ -43,7 +39,7 @@ EOF
 }
 
 resource "aws_instance" "three" {
-  ami             = ""ami-03054015e26069645"
+  ami             = "ami-03054015e26069645"
   instance_type   = "t2.micro"
   key_name        = "zulum"
   vpc_security_group_ids = [aws_security_group.five.id]
